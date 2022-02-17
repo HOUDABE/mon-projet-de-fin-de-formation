@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box; /* Evite que les éléments sortent du bloc */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:rgb(254, 246, 249) ;
+
+}
+.promotion{
+    width: 100%;
+    height: 30px;
+    background-color:black;
+    color: white;
+    text-align: center;
+   
+}
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.header_site .header{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 30px;
+
+}
+.menu_header li {
+    display :inline-block;
+    padding: 0 15px;
+    font-size:18px;
+    font-weight:100;
+}
+
+.image{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 50vh;
+   min-width: 150vh;
+   background-color: black;
+ }
+ .box{
+   position: relative;
+   width: 200px;
+   height: 200px;
+   transform-style:preserve-3d;/*Indique que les fils de l'élément ciblé doivent être positionnés dans l'espace 3D */
+   animation: animate 30s linear infinite;
+ }
+ @keyframes animate
+ {
+     0%
+     {
+        transform: perspective(1500px) rotateY(0deg); 
+     }
+     100%
+     {
+        transform: perspective(1500px) rotateY(360deg); 
+     }
+ }
+ .box span{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     transform-origin: center;
+     transform-style: preserve-3d;
+     transform: rotateY(calc(var(--i)* 45deg)) translateZ(400px);
+     -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);/*le reflet des image  */
+ }
+
+ .box span img{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;/*remplissant toute la boîte de contenu.  */
+ }
+ .text p{
+     text-align: center;
+     padding: 10px 300px ;
+     margin-top: 50px;
+    
+ }
